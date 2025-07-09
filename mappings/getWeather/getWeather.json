@@ -1,0 +1,40 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/api/v1/getWeather",
+        "queryParameters": {
+          "city": {
+            "equalTo": "Bengaluru"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"city\":\"Bengaluru\",\"temperature\":27.1,\"conditions\":\"Mostly cloudy\",\"forecasts\":[{\"date\":\"2024-09-02T07:00:00+05:30\",\"temperature\":83,\"conditions\":\"Partly sunny w/ t-storms\"},{\"date\":\"2024-09-03T07:00:00+05:30\",\"temperature\":83,\"conditions\":\"Thunderstorms\"},{\"date\":\"2024-09-04T07:00:00+05:30\",\"temperature\":83,\"conditions\":\"Intermittent clouds\"},{\"date\":\"2024-09-05T07:00:00+05:30\",\"temperature\":82,\"conditions\":\"Dreary\"},{\"date\":\"2024-09-06T07:00:00+05:30\",\"temperature\":82,\"conditions\":\"Dreary\"}]}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPath": "/api/v1/getWeather",
+        "queryParameters": {
+          "city": {
+            "equalTo": "Bogota"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"city\": \"Bogotá\",\"temperature\": 15,\"conditions\": \"Mostly cloudy\",\"forecasts\": [{\"date\": \"2025-06-09T07:00:00+05:30\",\"temperature\": 18,\"conditions\": \"Partly sunny w/ t-storms\"}]},",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }    
+  ]
+}
