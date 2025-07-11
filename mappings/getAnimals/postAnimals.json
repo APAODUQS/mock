@@ -1,6 +1,7 @@
 {
   "mappings": [
     {
+      "priority": 2,
       "request": {
         "method": "POST",
         "urlPath": "/api/v1/createAnimals",
@@ -41,22 +42,32 @@
       }
     },
     {
+      "priority": 1,
       "request": {
         "method": "POST",
         "urlPath": "/api/v1/createAnimals",
         "bodyPatterns": [
           {
-            "equalToJson": {"type": "cat"}
+            "equalToJson": {"type": "dragon"}
           }
         ]
       },
       "response": {
         "status": 200,
-        "body": "{\"type\": \"cat\",\"name\": \"Tarzán\",\"age\": 13,\"food\": [\"chicken\", \"ice\", \"cookies\"],\"owner\": {\"name\": \"Paola\",\"age\": 33}}",
+        "jsonBody": {
+          "type": "dragon",
+          "name": "Chimuelo",
+          "age": 100,
+          "food": [
+              "chicken",
+              "ice",
+              "cookies"
+          ]
+      },
         "headers": {
           "Content-Type": "application/json"
         }
       }
-    }          
+    }      
   ]
 }
