@@ -39,6 +39,24 @@
           "Content-Type": "application/json"
         }
       }
-    }      
+    },
+    {
+      "request": {
+        "method": "POST",
+        "urlPath": "/api/v1/createAnimals",
+        "bodyPatterns": [
+          {
+            "equalToJson": {"type": "cat"}
+          }
+        ]
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"type\": \"cat\",\"name\": \"Tarzán\",\"age\": 13,\"food\": [\"chicken\", \"ice\", \"cookies\"],\"owner\": {\"name\": \"Paola\",\"age\": 33}}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }          
   ]
 }
