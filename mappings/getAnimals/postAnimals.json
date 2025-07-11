@@ -1,0 +1,44 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "POST",
+        "urlPath": "/api/v1/createAnimals",
+        "bodyPatterns" : [ {
+          "matchesJsonSchema" : {
+            "type": "object",
+            "required": [
+              "type",
+              "name"
+            ],
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "age": {
+                "type": "number"
+              },
+              "food": {
+                "type": "array"
+              },
+              "owner": {
+                "type": "object"
+              }              
+            }
+          },
+          "schemaVersion" : "V202012"
+        } ]
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"type\": \"dog\",\"name\": \"Tarzán\",\"age\": 13,\"food\": [\"chicken\", \"ice\", \"cookies\"],\"owner\": {\"name\": \"Paola\",\"age\": 33}}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }      
+  ]
+}
