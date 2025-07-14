@@ -1,6 +1,28 @@
 {
   "mappings": [
     {
+      "priority": 3,
+      "request": {
+        "method": "POST",
+        "urlPath": "/api/v1/createAnimals",
+        "bodyPatterns": [
+          {
+            "equalToJson": {
+              "type": "human",
+              "food": ["meal", "candy", "animals"]
+            }
+          }
+        ]
+      },
+      "response": {
+        "status": 200,
+        "body": "{ \"type\": \"{{jsonPath request.body '$.type'}}\", \"name\": \"Pepito\", \"age\": 100, \"food\": [{{#each (jsonPath request.body '$.food') as |food|}} { \"type\": \"Food\", \"value\":\"{{food}}\"}, {{/each}}]",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },    
+    {
       "priority": 2,
       "request": {
         "method": "POST",
@@ -35,7 +57,7 @@
       },
       "response": {
         "status": 200,
-        "body": "{\"type\": \"dog\",\"name\": \"Tarzán\",\"age\": 13,\"food\": [\"chicken\", \"ice\", \"cookies\"],\"owner\": {\"name\": \"Paola\",\"age\": 33}}",
+        "body": "{{request.body}}",
         "headers": {
           "Content-Type": "application/json"
         }
